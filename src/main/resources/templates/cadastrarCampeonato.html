@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Cadastrar Aluno</title>
+	<title>Cadastrar Campeonato</title>
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/grupo4/alunos");
+			window.open("/grupo4/campeonatos");
 		}
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,52 +24,41 @@
 	</header>
 	<div class="container my-5">
 		<br />
-		<h3>Cadastrar Aluno</h3>
+		<h3>Cadastrar Campeonato</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/grupo4/alunos}" th:object="${aluno}" method="post">
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="cpf" class="col-form-label">CPF</label>
-								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" maxlength="11" placeholder="CPF">
-								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger"></span>
-							</div>
-						</div>
+					<form action="#" th:action="@{/grupo4/campeonatos}" th:object="${campeonato}" method="post">
+						
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Nome</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
+								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
-								<input type="text" th:field="*{dataNascimento}" class="form-control" id="dataNascimento"
-									maxlength="10" onkeyup="makeDate()" placeholder="DD/MM/AAAA">
-								<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
-									class="text-danger"></span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-									<label>Sexo</label>
-									<br/>
-								<input type="radio" th:field="*{sexo}" name="flexRadioDefault" id="flexRadioDefault1"
-									value="M">
-								<label> Masculino </label>
-								<input type="radio" th:field="*{sexo}" name="flexRadioDefault" id="flexRadioDefault2"
-									value="F" checked>
-								<label> Feminino </label>
-								<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
+								<label for="dataCampeonato" class="col-form-label">Data</label>
+								<input type="text" th:field="*{dataCampeonato}" class="form-control" id="dataCampeonato"
+									placeholder="  /  /    ">
+								<span th:if="${#fields.hasErrors('dataCampeonato')}" th:errors="*{dataCampeonato}" class="text-danger">
 								</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
+								<label for="horaCampeonato" class="col-form-label">Horário</label>
+								<input type="text" th:field="*{horaCampeonato}" class="form-control" id="00:00"
+									placeholder="  :  ">
+								<span th:if="${#fields.hasErrors('horaCampeonato')}" th:errors="*{horaCampeonato}"
+									class="text-danger"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="CEP">
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						</div>
@@ -77,7 +66,7 @@
 							<div class="form-group col-md-8">
 								<label for="complemento" class="col-form-label">Número/Complemento</label>
 								<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
-									placeholder="Complemento numero/apto">
+									placeholder="">
 								<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 									class="text-danger"></span>
 							</div>
@@ -85,22 +74,21 @@
 							<div class="row">
 								<div class="form-group col-md-8">
 										<label>Categoria</label>
-										<br/>
+									<br/>
 									<input type="radio" th:field="*{categoria}" name="flexRadioDefault"
-										id="flexRadioDefault1" value="Gestão">
-									<label> Gestão </label>
+										id="flexRadioDefault1" value="InterFatecs">
+									<label> InterFatecs </label>
 									<input type="radio" th:field="*{categoria}" name="flexRadioDefault"
-										id="flexRadioDefault2" value="Filiado" checked>
-									<label> Filiado</label>
+										id="flexRadioDefault2" value="FatecZL" checked>
+									<label> FatecZL</label>
 									<input type="radio" th:field="*{categoria}" name="flexRadioDefault"
 										id="flexRadioDefault3" value="Outros" checked>
 									<label> Outros </label>
-								</div>
-							  </div>	
-							  <div class="row">	
+								 </div>
+						 	</div>
 							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Cadastrar Aluno">
-								<input type="button" class="btn btn-primary" value="Consultar Aluno"
+								<input type="submit" class="btn btn-primary" value="Cadastrar Campeonato">
+								<input type="button" class="btn btn-primary" value="Consultar Campeonato"
 									onclick="consulta();">
 							</div>
 					    </div>
