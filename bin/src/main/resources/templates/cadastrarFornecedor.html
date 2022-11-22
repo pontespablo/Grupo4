@@ -22,30 +22,32 @@
 		<div>header</div>
 	</header>
 	<div class="container my-5">
-		<br />
-		<h3>Cadastrar Fornecedor</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
 					<form action="#" th:action="@{/grupo4/fornecedores}" th:object="${fornecedor}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
+							<b><label>Dados Gerais</label></b>
+								<br/>
 								<label for="cnpj" class="col-form-label">CNPJ</label>
-								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="CNPJ">
+								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="">
 								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="razaoSocial" class="col-form-label">Razão Social</label>
-								<input type="text" th:field="*{razaoSocial}" class="form-control" id="razaoSocial" placeholder="Razão Social">
+								<input type="text" th:field="*{razaoSocial}" class="form-control" id="razaoSocial" placeholder="">
 								<span th:if="${#fields.hasErrors('razaoSocial')}" th:errors="*{razaoSocial}" class="text-danger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
+							<b><label>Endereço</label></b>
+								<br/>
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						</div>
@@ -53,14 +55,14 @@
 							<div class="form-group col-md-8">
 								<label for="complemento" class="col-form-label">Complemento</label>
 								<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
-									placeholder="Complemento numero/apto">
+									placeholder="">
 								<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 									class="text-danger"></span>
 							</div>
 						</div>
 						<div class="row">
 								<div class="form-group col-md-8">
-										<label>Categoria</label>
+										<b><label>Categoria</label></b>
 										<br/>
 									<input type="radio" th:field="*{categoria}" name="flexRadioDefault"
 										id="flexRadioDefault1" value="Gestão">

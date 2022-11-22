@@ -1,5 +1,6 @@
 function makeDate(){
 	obj = document.getElementById('dataNascimento');
+	obj = document.getElementById('dataEvento');
 	vl = obj.value;
 	l = vl.toString().length;
 	switch(l){

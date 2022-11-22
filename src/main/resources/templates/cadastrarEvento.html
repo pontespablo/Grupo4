@@ -41,7 +41,7 @@
 							<div class="form-group col-md-8">
 								<label for="dataEvento" class="col-form-label">Data</label>
 								<input type="text" th:field="*{dataEvento}" class="form-control" id="dataEvento"
-									placeholder="  /  /    ">
+									maxlength="10" onkeyup="makeDate()" placeholder="DD/MM/AAAA">
 								<span th:if="${#fields.hasErrors('dataEvento')}" th:errors="*{dataEvento}" class="text-danger">
 								</span>
 							</div>
@@ -50,7 +50,7 @@
 							<div class="form-group col-md-8">
 								<label for="horaEvento" class="col-form-label">Horário</label>
 								<input type="text" th:field="*{horaEvento}" class="form-control" id="00:00"
-									placeholder="  :  ">
+									placeholder=" 10:00 ">
 								<span th:if="${#fields.hasErrors('horaEvento')}" th:errors="*{horaEvento}"
 									class="text-danger"></span>
 							</div>

@@ -7,7 +7,7 @@
 	<title>Cadastrar Pedido</title>
 	<script type="text/javascript" th:src="@{/js/actions.js}"></script>
 	<script type="text/javascript">
-		function consulta() {
+		function cadastrar() {
 			window.open("/grupo4/pedidos");
 		}
 	</script>
@@ -26,16 +26,16 @@
 		<div>header</div>
 	</header>
 	<div class="container my-5">
-		<br />
-		<h3>Cadastrar Pedido</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
 					<form action="#" th:action="@{/grupo4/pedidos}" th:object="${umPedido}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
+							<b><label>Dados Gerais</label></b>
+								<br/>
 								<label for="cpf" class="col-form-label">CPF</label>
-								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="cpf">
+								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="">
 								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="textdanger"> </span>
 							</div>
 						</div>
@@ -43,7 +43,7 @@
 							<div class="form-group col-md-8">
 								<label for="produtoId" class="col-form-label">Código Produto</label>
 								<input type="text" th:field="*{produtoId}" class="form-control" id="produtoId"
-									placeholder="Código Produto">
+									placeholder="">
 								<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}"
 									class="textdanger"> </span>
 							</div>
@@ -52,7 +52,7 @@
 							<div class="form-group col-md-8">
 								<label for="quantidade" class="col-form-label">Quantidade</label>
 								<input type="text" th:field="*{quantidade}" class="form-control" id="quantidade"
-									placeholder="Quantidade"> <span th:if="${#fields.hasErrors('quantidade')}"
+									placeholder=""> <span th:if="${#fields.hasErrors('quantidade')}"
 									th:errors="*{quantidade}" class="text-danger"></span>
 							</div>
 						</div>

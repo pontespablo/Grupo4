@@ -33,7 +33,7 @@
 						<div class="row">
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CNPJ</label> <input type="text" th:field="*{cnpj}"
-									class="form-control" id="cnpj" placeholder="cnpj">
+									class="form-control" id="cnpj" maxlength="14" placeholder="somente números">
 								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger">
 								</span>
 							</div>
@@ -49,7 +49,7 @@
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="CEP">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						    </div>
