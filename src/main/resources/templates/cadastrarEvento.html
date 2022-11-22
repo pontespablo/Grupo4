@@ -23,8 +23,6 @@
 		<div>header</div>
 	</header>
 	<div class="container my-5">
-		<br />
-		<h3>Cadastrar Evento</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
@@ -32,6 +30,8 @@
 						
 						<div class="row">
 							<div class="form-group col-md-8">
+							<b><label>Dados Gerais</label></b>
+								<br/>
 								<label for="nome" class="col-form-label">Nome</label>
 								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
@@ -55,8 +55,10 @@
 									class="text-danger"></span>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row">						
 							<div class="form-group col-md-8">
+							<b><label>Endereço</label></b>
+								<br/>
 								<label for="cep" class="col-form-label">CEP</label>
 								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
@@ -73,7 +75,7 @@
 						</div>
 							<div class="row">
 								<div class="form-group col-md-8">
-										<label>Categoria</label>
+										<b><label>Categoria</label></b>
 									<br/>
 									<input type="radio" th:field="*{categoria}" name="flexRadioDefault"
 										id="flexRadioDefault1" value="Show">

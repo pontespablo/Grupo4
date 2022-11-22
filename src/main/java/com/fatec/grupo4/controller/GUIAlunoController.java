@@ -35,7 +35,7 @@ public class GUIAlunoController {
 	@GetMapping("/aluno")
 	public ModelAndView retornaFormDeCadastroDe(Aluno aluno) {
 		ModelAndView mv = new ModelAndView("cadastrarAluno");
-		List<String> lista = Arrays.asList("Gestão", "Filiado", "Outros");
+		List<String> lista = Arrays.asList("Gestão", "Filiado", "Atleta", "Outros");
 		mv.addObject("lista", lista);
 		mv.addObject("Aluno", aluno);
 		return mv;
@@ -44,7 +44,7 @@ public class GUIAlunoController {
 	@GetMapping("/alunos/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarAluno(@PathVariable("cpf") String cpf) {
 		ModelAndView mv = new ModelAndView("atualizarAluno");
-		List<String> lista = Arrays.asList("Gestão", "Filiado", "Outros");
+		List<String> lista = Arrays.asList("Gestão", "Filiado", "Atleta", "Outros");
 		mv.addObject("lista", lista);
 		Optional<Aluno> aluno = servico.consultaPorCpf(cpf);
 		if (aluno.isPresent()) {
@@ -68,7 +68,7 @@ public class GUIAlunoController {
 	public ModelAndView save(@Valid Aluno aluno, BindingResult result) {
 		ModelAndView mv = new ModelAndView("consultarAluno");
 		if (result.hasErrors()) {
-			List<String> lista = Arrays.asList("Gestão", "Filiado", "Outros");
+			List<String> lista = Arrays.asList("Gestão", "Filiado", "Atleta", "Outros");
 			mv.addObject("lista", lista);
 			mv.setViewName("cadastrarAluno");
 		} else {
