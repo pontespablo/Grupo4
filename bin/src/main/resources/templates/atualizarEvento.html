@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}" />
+		<script type="text/javascript" th:src="@{/js/makeDate.js}"></script>
 </head>
 <header th:replace="fragments/header :: menuSuperior">
 	<div>header</div>
@@ -43,7 +44,7 @@
 							<div class="form-group col-md-8">
 								<label for="dataEvento" class="col-form-label">Data</label>
 								<input type="text" th:field="*{dataEvento}" class="form-control" id="dataEvento"
-									placeholder="  /  /    ">
+									maxlength="10" onkeyup="makeDate()" placeholder="DD/MM/AAAA">
 								<span th:if="${#fields.hasErrors('dataEvento')}" th:errors="*{dataEvento}" class="text-danger">
 								</span>
 							</div>
@@ -52,7 +53,7 @@
 							<div class="form-group col-md-8">
 								<label for="horaEvento" class="col-form-label">Horário</label>
 								<input type="text" th:field="*{horaEvento}" class="form-control" id="00:00"
-									placeholder="  :  ">
+									placeholder=" 10:00 ">
 								<span th:if="${#fields.hasErrors('horaEvento')}" th:errors="*{horaEvento}"
 									class="text-danger"></span>
 							</div>
@@ -60,7 +61,7 @@
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="">
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						</div>

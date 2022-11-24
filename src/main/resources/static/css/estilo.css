@@ -15,10 +15,31 @@ body {
 	text-align: center;
  }
  
- ..btn-primary .bt{
-	 background-color: #530505;
+ .btn-primary .bt{
+	 background-color: #530505!important;
 	 color:#be9c25;
  }
+ 
+ .btn-primary{
+	 background-color: #530505!important;
+	 color:#fff!important;
+	 border-color: #530505!important;
+ }
+
+::-webkit-input-placeholder { /* Edge */
+  color: #C5C5C5!important;
+  opacity: 70%!important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #C5C5C5!important;
+  opacity: 70%!important;
+}
+
+::placeholder {
+  color: #C5C5C5;
+  opacity: 70%!important;
+}
 
 /* navbar */
 

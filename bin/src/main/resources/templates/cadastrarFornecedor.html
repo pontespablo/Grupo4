@@ -31,7 +31,7 @@
 							<b><label>Dados Gerais</label></b>
 								<br/>
 								<label for="cnpj" class="col-form-label">CNPJ</label>
-								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="">
+								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" maxlength="14" placeholder="somente números">
 								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger"></span>
 							</div>
 						</div>
@@ -47,7 +47,7 @@
 							<b><label>Endereço</label></b>
 								<br/>
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="">
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" maxlength="8" placeholder="">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						</div>
